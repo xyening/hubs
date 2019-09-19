@@ -156,7 +156,7 @@ class ImportContentComponent extends Component {
       const url = urls[i];
 
       if (url.endsWith(".pack")) {
-        const res = await fetch(`https://${configs.CORS_PROXY_SERVER}/${url}`);
+        const res = await fetch(`${url}`);
         const packUrls = (await res.text()).split("\n");
         for (const u of packUrls) {
           if (u.trim() !== "") {
@@ -180,7 +180,7 @@ class ImportContentComponent extends Component {
 
       if (!importUrl) continue;
 
-      const res = await fetch(`https://${configs.CORS_PROXY_SERVER}/${importUrl}`);
+      const res = await fetch(`${importUrl}`);
       const type = isScene ? "scenes" : "avatars";
       const asset = (await res.json())[type][0];
       const isDefault = (isScene && needsDefaultScene) || (isAvatar && needsDefaultAvatar);
@@ -323,7 +323,7 @@ class ImportContentComponent extends Component {
           break;
       }
 
-      const screenshotUrl = `https://${configs.CORS_PROXY_SERVER}/${r.asset.screenshot_url || r.asset.files.thumbnail}`;
+      const screenshotUrl = `${r.asset.screenshot_url || r.asset.files.thumbnail}`;
 
       return (
         <TableRow key={r.url}>

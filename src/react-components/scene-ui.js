@@ -207,7 +207,7 @@ class SceneUI extends Component {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={getReticulumFetchUrl(`/spoke/projects/${sceneProjectId}`)}
+                    href={getReticulumFetchUrl(`/editor/projects/${sceneProjectId}`)}
                     className={styles.scenePreviewButton}
                   >
                     <Pen />
@@ -222,7 +222,7 @@ class SceneUI extends Component {
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href={getReticulumFetchUrl(`/spoke/projects/new?sceneId=${sceneId}`)}
+                      href={getReticulumFetchUrl(`/editor/projects/new?sceneId=${sceneId}`)}
                       className={styles.scenePreviewButton}
                     >
                       <CodeBranch />

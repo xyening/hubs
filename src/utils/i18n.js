@@ -12,7 +12,7 @@ const defaultLocaleData = {
   "app-tagline": "Private social VR in your web browser"
 };
 
-const DEFAULT_LOCALE = "en";
+const DEFAULT_LOCALE = "zh-cn";
 const cachedMessages = new Map();
 
 let _locale = DEFAULT_LOCALE;
@@ -60,23 +60,23 @@ function findLocale(locale) {
 
 export function setLocale(locale) {
   const resolvedLocale = findLocale(locale);
-
-  if (resolvedLocale === DEFAULT_LOCALE) {
-    _locale = resolvedLocale;
-    _localeData = defaultLocaleData;
-    window.dispatchEvent(new CustomEvent("locale-updated"));
-  } else {
-    if (cachedMessages.has(resolvedLocale)) {
-      _locale = resolvedLocale;
-      window.dispatchEvent(new CustomEvent("locale-updated"));
-    } else {
+  console.log('-----', locale, resolvedLocale);
+  // if (resolvedLocale === DEFAULT_LOCALE) {
+  //   _locale = resolvedLocale;
+  //   _localeData = defaultLocaleData;
+  //   window.dispatchEvent(new CustomEvent("locale-updated"));
+  // } else {
+  //   if (cachedMessages.has(resolvedLocale)) {
+  //     _locale = resolvedLocale;
+  //     window.dispatchEvent(new CustomEvent("locale-updated"));
+  //   } else {
       import(`../assets/locales/${resolvedLocale}.json`).then(({ default: localeData }) => {
         _locale = resolvedLocale;
         _localeData = { ...defaultLocaleData, ...localeData };
         window.dispatchEvent(new CustomEvent("locale-updated"));
       });
-    }
-  }
+    // }
+  // }
 }
 
 const interval = window.setInterval(() => {
@@ -99,9 +99,9 @@ export const getMessage = key => {
 
 // TODO: This should be removed, lets not inject app config data up front but rather via variables so that defaultMessage works properly.
 export const getMessages = () => {
-  if (cachedMessages.has(_locale)) {
-    return cachedMessages.get(_locale);
-  }
+  // if (cachedMessages.has(_locale)) {
+  //   return cachedMessages.get(_locale);
+  // }
 
   // Swap in translations specified via the admin panel
   if (configs.APP_CONFIG && configs.APP_CONFIG.translations && configs.APP_CONFIG.translations[_locale]) {

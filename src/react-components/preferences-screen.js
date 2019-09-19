@@ -1003,6 +1003,10 @@ class PreferencesScreen extends Component {
         this.mediaDevicesManager.startMicShare({ updatePrefs: false }).then(this.updateMediaDevices);
     }
   }
+// {
+//   value: "browser",
+//   text: browserDefault
+// }
 
   createSections() {
     const intl = this.props.intl;
@@ -1013,10 +1017,7 @@ class PreferencesScreen extends Component {
     });
 
     const availableLocales = [
-      {
-        value: "browser",
-        text: browserDefault
-      }
+
     ];
 
     for (const locale in AVAILABLE_LOCALES) {
