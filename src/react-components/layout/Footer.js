@@ -25,7 +25,7 @@ export function Footer({
           {!hidePoweredBy && (
             <FormattedMessage
               id="footer.powered-by"
-              defaultMessage="<a>重现科技</a> 技术支持"
+              defaultMessage="<a>重现科技</a>"
               values={{
                 // eslint-disable-next-line react/display-name
                 a: chunks => (
