@@ -69,7 +69,7 @@ const defaultLocaleData = {
   "avatar-page.selected": "这是您现在的头像",
   "avatar-preview.loading-failed": "加载失败{linebreak}请选择其他的头像",
   "avatar-settings-content.change-avatar-button": "更换头像",
-  "avatar-settings-content.display-name-description": "字母数字与连接字符。至少三个字母，不要超过32个",
+  "avatar-settings-content.display-name-description": "字母数字文字。至少三个，不要超过32个",
   "avatar-settings-content.display-name-label": "显示的名称",
   "avatar-settings-sidebar.title": "头像设定",
   "avatar-setup-sidebar.title": "头像设定",
