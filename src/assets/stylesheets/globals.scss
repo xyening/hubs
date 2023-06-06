@@ -7,7 +7,6 @@
 
 html, body, #ui-root, .home-root {
   margin: 0;
-  height:100%;
 }
 
 body {
@@ -17,7 +16,7 @@ body {
 }
 
 #ui-root, .home-root {
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
 
